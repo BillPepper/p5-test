@@ -1,0 +1,16 @@
+{
+  "name": "p5-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "p5": "^0.7.3",
+    "p5audio": "^1.0.9"
+  }
+}
