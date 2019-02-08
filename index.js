@@ -15,14 +15,17 @@ function preload() {
 
 function setup() {
   createCanvas(resX, resY)
+  stat = new station(30, 30)
+  ship = new ship(20, 20, 10)
 }
 
 function draw() {
   background(0)
   drawBackground()
   renderCursorPos()
-  navigateToTarget()
+  ship.navigateToTarget()
   ellipse(posX, posY, 20, 20)
+  stat.draw()
 }
 
 function drawBackground() {
@@ -45,21 +48,6 @@ function setTargetPosition(x, y) {
   targetY = Math.round(y)
 }
 
-function navigateToTarget() {
-  if (posX < targetX) {
-    posX += speed
-  }
-  if (posX > targetX) {
-    posX -= speed
-  }
-  if (posY < targetY) {
-    posY += speed
-  }
-  if (posY > targetY) {
-    posY -= speed
-  }
-}
-
 function renderCursorPos() {
   sz = 10
   textSize(sz)
@@ -77,4 +65,40 @@ function renderCursorPos() {
   textSize(sz)
   text(targetY, 450, 95)
   fill(255, 255, 255)
+}
+
+class entity {
+  constructor(x, y) {
+    this.x = x
+    this.y = y
+  }
+}
+
+class station extends entity {
+  draw() {
+    size = 40
+    rect(this.x, this.y, size, size)
+  }
+}
+
+class ship extends entity {
+  constructor(x, y, s) {
+    super(x, y)
+    speed = s
+  }
+
+  navigateToTarget() {
+    if (posX < targetX) {
+      posX += speed
+    }
+    if (posX > targetX) {
+      posX -= speed
+    }
+    if (posY < targetY) {
+      posY += speed
+    }
+    if (posY > targetY) {
+      posY -= speed
+    }
+  }
 }
