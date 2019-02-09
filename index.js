@@ -10,6 +10,8 @@ targetY = 0
 
 menuEnabled = false
 
+entities = []
+
 let img
 function preload() {
   img = loadImage('assets/g.png')
@@ -18,18 +20,21 @@ function preload() {
 function setup() {
   createCanvas(resX, resY)
   stat = new Station(30, 30, 40)
+  entities.push(stat)
   ship = new ship(20, 20, 10)
+  entities.push(ship)
   ui = new ui()
+  entities.push(ui)
 }
 
 function draw() {
   background(0)
   drawBackground()
   renderCursorPos()
-  ship.navigateToTarget()
-  ellipse(posX, posY, 20, 20)
-  stat.update()
-  ui.update()
+
+  entities.forEach(entity => {
+    entity.update()
+  })
 }
 
 function drawBackground() {

@@ -4,6 +4,10 @@ class ship extends Entity {
     speed = s
   }
 
+  draw() {
+    ellipse(posX, posY, 20, 20)
+  }
+
   navigateToTarget() {
     if (!menuEnabled) {
       if (posX < targetX) {
@@ -19,5 +23,10 @@ class ship extends Entity {
         posY -= speed
       }
     }
+  }
+
+  update() {
+    this.navigateToTarget()
+    this.draw()
   }
 }
