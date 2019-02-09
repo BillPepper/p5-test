@@ -5,22 +5,22 @@ class ship extends Entity {
   }
 
   draw() {
-    ellipse(posX, posY, 20, 20)
+    ellipse(shipX, shipY, 20, 20)
   }
 
   navigateToTarget() {
     if (!menuEnabled) {
-      if (posX < targetX) {
-        posX += speed
+      if (shipX < targetX) {
+        shipX += speed
       }
-      if (posX > targetX) {
-        posX -= speed
+      if (shipX > targetX) {
+        shipX -= speed
       }
-      if (posY < targetY) {
-        posY += speed
+      if (shipY < targetY) {
+        shipY += speed
       }
-      if (posY > targetY) {
-        posY -= speed
+      if (shipY > targetY) {
+        shipY -= speed
       }
     }
   }

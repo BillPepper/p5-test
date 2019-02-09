@@ -1,15 +1,15 @@
 resX = 500
 resY = 500
 
-posX = 20
-posY = 20
+shipX = 20
+shipY = 20
 speed = 10
 
 targetX = 0
 targetY = 0
 
 menuEnabled = false
-
+shipWasDocked = false
 entities = []
 
 let img
@@ -19,7 +19,7 @@ function preload() {
 
 function setup() {
   createCanvas(resX, resY)
-  stat = new Station(30, 30, 40)
+  stat = new Station(250, 250, 40)
   entities.push(stat)
   ship = new ship(20, 20, 10)
   entities.push(ship)

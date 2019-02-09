@@ -9,10 +9,18 @@ class Station extends Entity {
   }
 
   checkShipContact() {
-    if (posY >= this.y && posY < this.y + this.size) {
-      if (!menuEnabled) {
-        menuEnabled = !menuEnabled
+    if (
+      shipY >= this.y &&
+      shipY < this.y + this.size &&
+      shipX >= this.x &&
+      shipX < this.x + this.size
+    ) {
+      if (!shipWasDocked) {
+        shipWasDocked = true
+        menuEnabled = true
       }
+    } else {
+      shipWasDocked = false
     }
   }
 
