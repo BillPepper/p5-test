@@ -25,7 +25,17 @@ class ui {
       text('Your Items', 40, 80)
       textSize(15)
       text('Station Items', resX / 2, 80)
+
+      this.renderItems()
     }
+  }
+
+  renderItems() {
+    const items = ['lorem', 'ipsum']
+
+    items.forEach(item => {
+      text(item, 50, 115 + 25 * items.indexOf(item))
+    })
   }
 
   update() {
