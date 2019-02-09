@@ -17,7 +17,7 @@ function preload() {
 
 function setup() {
   createCanvas(resX, resY)
-  stat = new station(30, 30, 40)
+  stat = new Station(30, 30, 40)
   ship = new ship(20, 20, 10)
   ui = new ui()
 }
@@ -69,75 +69,4 @@ function renderCursorPos() {
   textSize(sz)
   text(targetY, 450, 95)
   fill(255, 255, 255)
-}
-
-class Entity {
-  constructor(x, y) {
-    this.x = x
-    this.y = y
-  }
-}
-
-class station extends Entity {
-  constructor(x, y, s) {
-    super(x, y)
-    this.size = s
-  }
-
-  draw() {
-    rect(this.x, this.y, this.size, this.size)
-  }
-
-  checkShipContact() {
-    if (posY >= this.y && posY < this.y + this.size) {
-      if (!menuEnabled) {
-        menuEnabled = !menuEnabled
-      }
-    }
-  }
-
-  update() {
-    this.checkShipContact()
-    this.draw()
-  }
-}
-
-class ship extends Entity {
-  constructor(x, y, s) {
-    super(x, y)
-    speed = s
-  }
-
-  navigateToTarget() {
-    if (!menuEnabled) {
-      if (posX < targetX) {
-        posX += speed
-      }
-      if (posX > targetX) {
-        posX -= speed
-      }
-      if (posY < targetY) {
-        posY += speed
-      }
-      if (posY > targetY) {
-        posY -= speed
-      }
-    }
-  }
-}
-
-class ui {
-  renderMenu() {
-    if (menuEnabled === true) {
-      rect(20, 20, resX - 40, resY - 40)
-    }
-  }
-
-  update() {
-    this.renderMenu()
-    if (keyIsDown(ESCAPE)) {
-      menuEnabled = false
-      console.log('esc')
-    }
-  }
 }
