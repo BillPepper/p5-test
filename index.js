@@ -17,14 +17,15 @@ entities = []
 let img
 function preload() {
   img = loadImage('assets/s.png')
+  stationImage = loadImage('assets/station.png')
 }
 
 function setup() {
   createCanvas(resX, resY)
-  stat = new Station(250, 250, 20)
-  entities.push(stat)
-  ship = new ship(20, 20, 5)
+  ship = new ship(20, 20, 1)
   entities.push(ship)
+  stat = new Station(250, 250, 50)
+  entities.push(stat)
   ui = new ui()
   entities.push(ui)
 }

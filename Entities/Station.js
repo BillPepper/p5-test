@@ -5,7 +5,8 @@ class Station extends Entity {
   }
 
   draw() {
-    rect(this.x, this.y, this.size, this.size)
+    // rect(this.x, this.y, this.size, this.size)
+    image(stationImage, this.x, this.y, this.size, this.size)
   }
 
   checkShipContact() {
