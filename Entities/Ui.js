@@ -13,7 +13,7 @@ class ui {
 
       // seperator line
       stroke(200)
-      line(resX / 2, 120, resY / 2, resY - 70)
+      line(resX / 2, 120, resX / 2, resY - 70)
 
       // text
       fill(200)
