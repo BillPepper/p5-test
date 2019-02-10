@@ -19,6 +19,10 @@ class Station extends Entity {
       if (!shipWasDocked) {
         shipWasDocked = true
         menuEnabled = true
+        shipX = this.x + this.size / 2
+        shipY = this.y + this.size / 2
+        targetX = shipX
+        targetY = shipY
       }
     } else {
       shipWasDocked = false
