@@ -5,7 +5,7 @@ class ship extends Entity {
   }
 
   draw() {
-    ellipse(shipX, shipY, 20, 20)
+    ellipse(shipX, shipY, 10, 10)
   }
 
   navigateToTarget() {

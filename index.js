@@ -21,9 +21,9 @@ function preload() {
 
 function setup() {
   createCanvas(resX, resY)
-  stat = new Station(250, 250, 40)
+  stat = new Station(250, 250, 20)
   entities.push(stat)
-  ship = new ship(20, 20, 10)
+  ship = new ship(20, 20, 5)
   entities.push(ship)
   ui = new ui()
   entities.push(ui)
