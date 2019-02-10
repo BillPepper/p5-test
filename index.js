@@ -12,6 +12,7 @@ targetY = 0
 
 menuEnabled = false
 shipWasDocked = false
+currentStation = ''
 entities = []
 
 let img
@@ -24,7 +25,7 @@ function setup() {
   createCanvas(resX, resY)
   ship = new ship(20, 20, 1)
   entities.push(ship)
-  stat = new Station(250, 250, 50)
+  stat = new Station(250, 250, 50, 'Nucleos Alpha')
   entities.push(stat)
   ui = new ui()
   entities.push(ui)

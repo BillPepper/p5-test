@@ -1,7 +1,8 @@
 class Station extends Entity {
-  constructor(x, y, s) {
+  constructor(x, y, s, name) {
     super(x, y)
     this.size = s
+    this.name = name
   }
 
   draw() {
@@ -16,17 +17,28 @@ class Station extends Entity {
       shipX >= this.x &&
       shipX < this.x + this.size
     ) {
-      if (!shipWasDocked) {
-        shipWasDocked = true
-        menuEnabled = true
-        shipX = this.x + this.size / 2
-        shipY = this.y + this.size / 2
-        targetX = shipX
-        targetY = shipY
-      }
+      this.dockShip()
     } else {
-      shipWasDocked = false
+      this.undockShip()
     }
+  }
+
+  dockShip() {
+    if (!shipWasDocked) {
+      shipWasDocked = true
+      menuEnabled = true
+      shipX = this.x + this.size / 2
+      shipY = this.y + this.size / 2
+      targetX = shipX
+      targetY = shipY
+    }
+
+    currentStation = this.name
+  }
+
+  undockShip() {
+    shipWasDocked = false
+    currentStation = 'none'
   }
 
   update() {

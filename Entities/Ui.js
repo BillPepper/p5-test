@@ -19,7 +19,7 @@ class ui {
       fill(200)
       noStroke()
       textSize(20)
-      text('Trade Menu', 40, 50)
+      text('Trade Menu - ' + currentStation, 40, 50)
 
       textSize(15)
       text('Your Items', 40, 80)
