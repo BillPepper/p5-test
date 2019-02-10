@@ -1,5 +1,5 @@
-resX = 500
-resY = 500
+resX = 1280
+resY = 768
 
 shipX = 20
 shipY = 20
