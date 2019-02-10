@@ -14,7 +14,7 @@ entities = []
 
 let img
 function preload() {
-  img = loadImage('assets/g.png')
+  img = loadImage('assets/s.png')
 }
 
 function setup() {
@@ -38,14 +38,17 @@ function draw() {
 }
 
 function drawBackground() {
-  size = 10
-  amount = 50
+  image(img, 0, 0, 1920, 1080)
 
-  for (let j = 0; j < amount; j++) {
-    for (let i = 0; i < amount; i++) {
-      image(img, size * i, j * size, size, size)
-    }
-  }
+  // for tiles
+  // size = 10
+  // amount = 50
+
+  // for (let j = 0; j < amount; j++) {
+  //   for (let i = 0; i < amount; i++) {
+  //     image(img, size * i, j * size, size, size)
+  //   }
+  // }
 }
 
 function mouseClicked(e) {
