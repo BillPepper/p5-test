@@ -55,7 +55,9 @@ function drawBackground() {
 }
 
 function mouseClicked(e) {
-  setTargetPosition(mouseX, mouseY)
+  if (!menuEnabled) {
+    setTargetPosition(mouseX, mouseY)
+  }
 }
 
 function setTargetPosition(x, y) {
