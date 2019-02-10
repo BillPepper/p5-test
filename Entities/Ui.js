@@ -26,15 +26,24 @@ class ui {
       textSize(15)
       text('Station Items', resX / 2, 80)
 
-      this.renderItems()
+      this.renderPlayerItems()
+      this.renderStationItems()
     }
   }
 
-  renderItems() {
-    const items = ['lorem', 'ipsum']
+  renderPlayerItems() {
+    const items = shipItems
 
     items.forEach(item => {
       text(item, 50, 115 + 25 * items.indexOf(item))
+    })
+  }
+
+  renderStationItems() {
+    const items = stationItems
+
+    items.forEach(item => {
+      text(item, resX / 2 + 10, 115 + 25 * items.indexOf(item))
     })
   }
 

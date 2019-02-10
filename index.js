@@ -4,6 +4,8 @@ resY = 768
 shipX = 20
 shipY = 20
 speed = 10
+shipItems = ['Energy Cells', 'Silicon Wavers', 'Duct Tape']
+stationItems = ['Meat', 'Wheat', 'Starch', 'Space Potatoes', 'Salt', 'Wine']
 
 targetX = 0
 targetY = 0
@@ -60,6 +62,7 @@ function setTargetPosition(x, y) {
   targetY = Math.round(y)
 }
 
+//debug function
 function renderCursorPos() {
   sz = 10
   textSize(sz)
