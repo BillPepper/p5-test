@@ -9,7 +9,7 @@ class ui {
       // border
       stroke(200)
       noFill()
-      rect(40, 90, resX - 80, resY - 130)
+      rect(40, 90, resX - 80, resY - 160)
 
       // seperator line
       stroke(200)
@@ -28,6 +28,7 @@ class ui {
 
       this.renderPlayerItems()
       this.renderStationItems()
+      this.renderButton()
     }
   }
 
@@ -45,6 +46,14 @@ class ui {
     items.forEach(item => {
       text(item, resX / 2 + 10, 115 + 25 * items.indexOf(item))
     })
+  }
+
+  renderButton() {
+    const posX = resX - 140
+    const posY = resY - 60
+    const width = 100
+    const height = 30
+    rect(posX, posY, width, height)
   }
 
   update() {
