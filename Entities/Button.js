@@ -11,10 +11,9 @@ class Button {
     if (
       mouseX >= this.x &&
       mouseX < this.x + this.w &&
-      mouseY >= this.x &&
+      mouseY >= this.y &&
       mouseY < this.y + this.h
     ) {
-      debugger
       fill(0, 100, 150)
       rect(this.x, this.y, this.w, this.h)
     } else {
