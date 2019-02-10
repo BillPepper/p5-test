@@ -1,7 +1,7 @@
 class ship extends Entity {
   constructor(x, y, s) {
     super(x, y)
-    speed = s
+    this.speed = s
   }
 
   draw() {
@@ -11,16 +11,16 @@ class ship extends Entity {
   navigateToTarget() {
     if (!menuEnabled) {
       if (shipX < targetX) {
-        shipX += speed
+        shipX += this.speed
       }
       if (shipX > targetX) {
-        shipX -= speed
+        shipX -= this.speed
       }
       if (shipY < targetY) {
-        shipY += speed
+        shipY += this.speed
       }
       if (shipY > targetY) {
-        shipY -= speed
+        shipY -= this.speed
       }
     }
   }

@@ -1,9 +1,9 @@
 resX = 1280
 resY = 768
 
-shipX = 20
-shipY = 20
-speed = 10
+shipX = 0
+shipY = 0
+shipSpeed = 4
 shipItems = ['Energy Cells', 'Silicon Wavers', 'Duct Tape']
 stationItems = ['Meat', 'Wheat', 'Starch', 'Space Potatoes', 'Salt', 'Wine']
 
@@ -23,8 +23,9 @@ function preload() {
 
 function setup() {
   createCanvas(resX, resY)
-  ship = new ship(20, 20, 1)
+  ship = new ship(20, 20, shipSpeed)
   entities.push(ship)
+
   stat = new Station(250, 250, 50, 'Nucleos Alpha')
   entities.push(stat)
   ui = new ui()
