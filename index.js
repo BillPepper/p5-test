@@ -66,18 +66,18 @@ function setTargetPosition(x, y) {
 function renderCursorPos() {
   sz = 10
   textSize(sz)
-  text(Math.round(mouseX), 450, 20)
+  text(Math.round(mouseX), 10, 20)
   fill(255, 255, 255)
 
   textSize(sz)
-  text(Math.round(mouseY), 450, 45)
+  text(Math.round(mouseY), 10, 45)
   fill(255, 255, 255)
 
   textSize(sz)
-  text(targetX, 450, 70)
+  text(targetX, 10, 70)
   fill(255, 255, 255)
 
   textSize(sz)
-  text(targetY, 450, 95)
+  text(targetY, 10, 95)
   fill(255, 255, 255)
 }
