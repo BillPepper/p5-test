@@ -25,8 +25,20 @@ class ship extends Entity {
     }
   }
 
+  navigateToTargetNew() {
+    fill(255)
+    background(0)
+    percentage += shipSpeed
+    if (percentage < 1.0) {
+      shipX = beginX + percentage * distX
+      shipY = beginY + pow(percentage, exponent) * distY
+    }
+    // fill(255);
+    ellipse(shipX, shipY, 20, 20)
+  }
+
   update() {
-    this.navigateToTarget()
-    this.draw()
+    this.navigateToTargetNew()
+    // this.draw()
   }
 }

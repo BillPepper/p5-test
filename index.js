@@ -1,14 +1,20 @@
 resX = 1280
 resY = 768
 
-shipX = 0
-shipY = 0
-shipSpeed = 4
 shipItems = ['Energy Cells', 'Silicon Wavers', 'Duct Tape']
 stationItems = ['Meat', 'Wheat', 'Starch', 'Space Potatoes', 'Salt', 'Wine']
 
-targetX = 0
-targetY = 0
+let beginX = 0.0 // Initial shipX-coordinate
+let beginY = 0.0 // Initial shipY-coordinate
+let targetX = 0.0 // Final shipX-coordinate
+let targetY = 0.0 // Final shipY-coordinate
+let distX // X-axis distance to move
+let distY // Y-axis distance to move
+let exponent = 4 // Determines the curve
+let shipX = 0.0 // Current shipX-coordinate
+let shipY = 0.0 // Current shipY-coordinate
+let shipSpeed = 0.008 // Size of each shipSpeed along the path
+let percentage = 0.0 // Percentage traveled (0.0 to 1.0)
 
 menuEnabled = false
 shipWasDocked = false
@@ -23,6 +29,8 @@ function preload() {
 
 function setup() {
   createCanvas(resX, resY)
+  distX = targetX - beginX
+  distY = targetY - beginY
   ship = new ship(20, 20, shipSpeed)
   entities.push(ship)
 
@@ -57,9 +65,13 @@ function drawBackground() {
 }
 
 function mouseClicked(e) {
-  if (!menuEnabled) {
-    setTargetPosition(mouseX, mouseY)
-  }
+  percentage = 0.0
+  beginX = shipX
+  beginY = shipY
+  targetX = mouseX
+  targetY = mouseY
+  distX = targetX - beginX
+  distY = targetY - beginY
 }
 
 function setTargetPosition(x, y) {
@@ -71,8 +83,10 @@ function setTargetPosition(x, y) {
 function debug() {
   // render ship debug stuff
   stroke(255)
-  circle(targetX / 2 + shipX / 2, targetY / 2 + shipY / 2, 30)
-  line(shipX, shipY, targetX, targetY)
+  noFill()
+  // circle(targetX / 2 + shipX / 2, targetY / 2 + shipY / 2, 30)
+  // line(shipX, shipY, targetX, targetY)
+  curve(500, 0, shipX, shipY, targetX, targetY, 500, 0)
   stroke(0)
 
   // render location debug
