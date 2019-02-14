@@ -35,7 +35,7 @@ function setup() {
 function draw() {
   background(0)
   drawBackground()
-  renderCursorPos()
+  debug()
 
   entities.forEach(entity => {
     entity.update()
@@ -68,7 +68,14 @@ function setTargetPosition(x, y) {
 }
 
 //debug function
-function renderCursorPos() {
+function debug() {
+  // render ship debug stuff
+  stroke(255)
+  circle(targetX / 2 + shipX / 2, targetY / 2 + shipY / 2, 30)
+  line(shipX, shipY, targetX, targetY)
+  stroke(0)
+
+  // render location debug
   sz = 10
   textSize(sz)
   text(Math.round(mouseX), 10, 20)
